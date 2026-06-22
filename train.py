@@ -86,7 +86,6 @@ class EvacuacionEnv(AlpyneEnv):
         self._tiempo = 0.0
         self._restantes = 0.0
         self._estado = None
-        self._gente = 0.0
         self._recompensa = 0.0
 
     def _get_obs(self, status: SimStatus) -> ObsType:
@@ -104,7 +103,6 @@ class EvacuacionEnv(AlpyneEnv):
         self._mediaAsfixia = float(obs.get('mediaAsfixia', self._mediaAsfixia))
         self._supervivencia = float(obs.get('supervivencia', self._supervivencia))
         self._tiempo = float(obs.get('tiempo', self._tiempo))
-        self._gente = float(obs.get('gente', self._gente))
         self._estado = str(status.state).upper()
 
         # Devolvemos el input para nuestro RL:
